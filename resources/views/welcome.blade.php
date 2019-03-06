@@ -64,7 +64,7 @@
 				</a>
                 <a href="https://www.linkedin.com/in/kumarravisingh/" target="_blank" class="flex-c-m s1-txt3 size3 how-btn trans-04 where1">
                     <i class="fa fa-linkedin">
-                        Linkeding
+                        Linkedin
                     </i>
                 </a>
                 <a href="https://github.com/kumarravisingh" target="_blank" class="flex-c-m s1-txt3 size3 how-btn trans-04 where1">
