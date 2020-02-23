@@ -4,7 +4,7 @@
 	<title>Laracon Start Timing</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
+<!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -31,13 +31,14 @@
 
 </head>
 <body>
-	
-	
+
+
 	<div class="bg-img1 size1 flex-w flex-c-m p-t-55 p-b-55 p-l-15 p-r-15" style="background-image: url('images/bg01.jpg');">
 		<div class="wsize1 bor1 bg1 p-t-175 p-b-45 p-l-15 p-r-15 respon1">
-			
-            @if(app()->environment() == 'production')
+
+            @if($eventPassed)
                 <p class="txt-center m1-txt1 p-t-20 p-b-68">Its over, Event Started, Go to <a href="https://laracon.net/">Laracon Online Official</a></p>.
+                <p class="txt-center m1-txt1 p-t-20 p-b-68">See you next year</p>
             @else
             <p class="txt-center m1-txt1">
 				Watch laracon live here: <a href="https://laracon.net/">Laracon Online Official</a>
@@ -45,6 +46,10 @@
             <p class="txt-center m1-txt1 p-t-20 p-b-68">Laracon will start in</p>
 
 			<div class="wsize2 flex-w flex-c hsize1 cd100">
+                <div class="flex-col-c-m size2 how-countdown">
+                    <span class="l1-txt1 p-b-9 days">17</span>
+                    <span class="s1-txt1">Days</span>
+                </div>
 				<div class="flex-col-c-m size2 how-countdown">
 					<span class="l1-txt1 p-b-9 hours">17</span>
 					<span class="s1-txt1">Hours</span>
@@ -60,7 +65,7 @@
 					<span class="s1-txt1">Seconds</span>
                 </div>
             </div>
-            @endif	
+            @endif
             <div class="row flex-c-m p-t-55">
                 <a href="https://twitter.com/kumarravi_me" target="_blank" class="flex-c-m s1-txt3 size3 how-btn trans-04 where1">
                     <i class="fa fa-twitter">
@@ -77,17 +82,17 @@
                         Github
                     </i>
                 </a>
-                
-				
-            </div>		
+
+
+            </div>
 		</div>
 	</div>
 
 
 
-	
 
-<!--===============================================================================================-->	
+
+<!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
 	<script src="vendor/bootstrap/js/popper.js"></script>
@@ -103,13 +108,13 @@
 		$('.cd100').countdown100({
 			/*Set Endtime here*/
 			/*Endtime must be > current time*/
-			endtimeYear: 2019,
-			endtimeMonth: 03,
-			endtimeDate: 06,
-			endtimeHours: 08,
-			endtimeMinutes: 00,
-			endtimeSeconds: 0,
-			timeZone: "America/New_York" 
+			endtimeYear: {{$laraconEstDateTime->year}},
+			endtimeMonth: {{$laraconEstDateTime->month}},
+			endtimeDate: {{$laraconEstDateTime->day}},
+			endtimeHours: {{$laraconEstDateTime->hour}},
+			endtimeMinutes: {{$laraconEstDateTime->minute}},
+			endtimeSeconds: {{$laraconEstDateTime->second}},
+			timeZone: "America/New_York"
 			// ex:  timeZone: "America/New_York"
 			//go to " http://momentjs.com/timezone/ " to get timezone
 		});

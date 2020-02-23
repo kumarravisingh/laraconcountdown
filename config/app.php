@@ -1,5 +1,7 @@
 <?php
 
+$eachYearLaraconEstDateTime = Carbon\Carbon::now('EST')->year.'-02-26 09:00';
+
 return [
 
     /*
@@ -14,6 +16,12 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+
+    /*
+     * laracon date
+     */
+
+    'laraconDate' => str_replace('_', ' ',env('THIS_YEAR_LARACON', $eachYearLaraconEstDateTime)).' -05:00',
 
     /*
     |--------------------------------------------------------------------------
